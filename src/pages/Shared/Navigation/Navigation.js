@@ -47,8 +47,12 @@ const Navigation = () => {
       textDecoration: "none",
       color: "black",
     },
+    phoneBtn: {
+      width: "100%",
+    },
   });
-  const { navItem, navIcon, navItemContainer, navLogo, phoneItem } = useStyle();
+  const { navItem, navIcon, navItemContainer, navLogo, phoneItem, phoneBtn } =
+    useStyle();
 
   const [state, setState] = React.useState(false);
 
@@ -66,19 +70,38 @@ const Navigation = () => {
         <ListItem button>
           <ListItemText>
             <Link className={phoneItem} to="/about">
-              About
+              About Us
             </Link>
           </ListItemText>
         </ListItem>
         <Divider />
         <ListItem button>
           <ListItemText>
-            <Link className={phoneItem} to="/service">
-              Service
+            <Link className={phoneItem} to="/projects">
+              Projects
             </Link>
           </ListItemText>
         </ListItem>
         <Divider />
+        <ListItem button>
+          <ListItemText>
+            <Link className={phoneItem} to="/contacts">
+              Contacts
+            </Link>
+          </ListItemText>
+        </ListItem>
+        <Divider />
+        <ListItem button>
+          <ListItemText>
+            <Link className={phoneItem} to="/admin">
+              Admin
+            </Link>
+          </ListItemText>
+        </ListItem>
+        <Divider />
+        <Button className={phoneBtn} variant="contained">
+          Login
+        </Button>
       </List>
     </Box>
   );
@@ -118,14 +141,28 @@ const Navigation = () => {
               </Link>
               <Link className={navItem} to="/about">
                 <Button className={navItem} color="inherit">
-                  About
+                  About us
                 </Button>
               </Link>
-              <Link className={navItem} to="/services">
+
+              <Link className={navItem} to="/projects">
                 <Button className={navItem} color="inherit">
-                  Services
+                  Projects
                 </Button>
               </Link>
+              <Link className={navItem} to="/contacts">
+                <Button className={navItem} color="inherit">
+                  Contacts
+                </Button>
+              </Link>
+              <Link className={navItem} to="/admin">
+                <Button className={navItem} color="inherit">
+                  Admin
+                </Button>
+              </Link>
+              <Button sx={{ px: 4 }} variant="contained">
+                Login
+              </Button>
             </Box>
           </Toolbar>
         </AppBar>
